@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17103f" />
+    <title>ZUZU — Пакеты для детей от 8 лет</title>
+    <style>
+      :root {
+        --ink: #17103f;
+        --lilac: #7472ba;
+        --paper: #f5f3ff;
+        --white: #fff;
+        --shadow: 0 20px 56px rgb(23 16 63 / 18%);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 6%, rgb(160 146 255 / 21%), transparent 20rem),
+          var(--paper);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .topbar {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 64px;
+        padding: 0.75rem clamp(1rem, 4vw, 2.5rem);
+        color: var(--white);
+        background: rgb(23 16 63 / 95%);
+        backdrop-filter: blur(10px);
+      }
+
+      .brand {
+        display: grid;
+        gap: 0.12rem;
+        min-width: 0;
+      }
+
+      .brand strong { font-size: 0.96rem; letter-spacing: 0.06em; }
+      .brand span { font-size: 0.76rem; opacity: 0.8; }
+
+      .page-links {
+        display: flex;
+        gap: 0.35rem;
+        overflow-x: auto;
+      }
+
+      .page-links a {
+        display: grid;
+        width: 2.05rem;
+        height: 2.05rem;
+        place-items: center;
+        flex: 0 0 auto;
+        border: 1px solid rgb(255 255 255 / 24%);
+        border-radius: 999px;
+        color: inherit;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .page-links a:hover,
+      .page-links a:focus-visible { background: var(--lilac); outline: 2px solid var(--white); outline-offset: 2px; }
+
+      main { width: min(100%, 700px); margin: 0 auto; padding: clamp(1.25rem, 4vw, 3rem) 1rem 5rem; }
+
+      .intro {
+        margin: 0 0 1.25rem;
+        text-align: center;
+      }
+
+      .intro p { margin: 0.2rem 0 0; color: #5e5a86; font-size: 0.92rem; }
+
+      .catalog-page {
+        position: relative;
+        margin: 0 0 clamp(1rem, 3vw, 1.75rem);
+        overflow: hidden;
+        border-radius: 1rem;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .catalog-page img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .catalog-page:target { outline: 4px solid var(--lilac); outline-offset: 4px; }
+
+      .page-number {
+        position: absolute;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.36rem 0.62rem;
+        border-radius: 999px;
+        color: var(--white);
+        background: rgb(23 16 63 / 75%);
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .note {
+        margin: 2.5rem auto 0;
+        padding: 1rem 1.15rem;
+        border-left: 4px solid var(--lilac);
+        border-radius: 0.5rem;
+        background: rgb(255 255 255 / 75%);
+        color: #504b76;
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 520px) {
+        .topbar { min-height: 58px; }
+        .brand span { display: none; }
+        main { padding-inline: 0.65rem; }
+        .catalog-page { border-radius: 0.55rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <strong>ZUZU PLAY &amp; FUN</strong>
+        <span>Пакеты для детей от 8 лет</span>
+      </div>
+      <nav class="page-links" aria-label="Страницы каталога">
+        <a href="#page-1" aria-label="Перейти к странице 1">1</a>
+        <a href="#page-2" aria-label="Перейти к странице 2">2</a>
+        <a href="#page-3" aria-label="Перейти к странице 3">3</a>
+        <a href="#page-4" aria-label="Перейти к странице 4">4</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro" aria-label="Описание каталога">
+        <p>Листайте каталог или переходите к нужной странице в верхнем меню.</p>
+      </section>
+
+      <figure class="catalog-page" id="page-1">
+        <img src="assets/page-1.png" alt="Обложка каталога: пакеты для детей от 8 лет" />
+        <figcaption class="page-number">1 / 4</figcaption>
+      </figure>
+      <figure class="catalog-page" id="page-2">
+        <img src="assets/page-2.png" alt="Страница 2 каталога пакетов" loading="lazy" />
+        <figcaption class="page-number">2 / 4</figcaption>
+      </figure>
+      <figure class="catalog-page" id="page-3">
+        <img src="assets/page-3.png" alt="Страница 3 каталога пакетов" loading="lazy" />
+        <figcaption class="page-number">3 / 4</figcaption>
+      </figure>
+      <figure class="catalog-page" id="page-4">
+        <img src="assets/page-4.png" alt="Страница 4 каталога пакетов" loading="lazy" />
+        <figcaption class="page-number">4 / 4</figcaption>
+      </figure>
+
+      <p class="note">Тестовая HTML-версия: страницы PDF сохранены как изображения, поэтому внешний вид каталога не меняется. Следующий этап может превратить каждый пакет в отдельную интерактивную карточку с кнопкой «Хочу этот вариант».</p>
+    </main>
+  </body>
+</html>
